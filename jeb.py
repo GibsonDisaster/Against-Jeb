@@ -21,6 +21,12 @@ def send_tweet():
 	status = tweet.cget('text')
 	api.update_status(status)
 
+def save_tweet():
+	to_save = tweet.cget('text')
+	saved_tweets = open('saved_tweets.txt', 'a+')
+	saved_tweets.write(to_save + '\n')
+	saved_tweets.close()	
+
 root = Tk()
 
 root.title('Against Jeb!')
@@ -33,5 +39,8 @@ tweet.pack()
 
 sbutton = Button(root, text = 'Send Tweet', command = send_tweet)
 sbutton.pack()
+
+savebutton = Button(root, text = 'Save', command = save_tweet)
+savebutton.pack()
 
 root.mainloop()
