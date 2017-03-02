@@ -43,4 +43,15 @@ sbutton.pack()
 savebutton = Button(root, text = 'Save', command = save_tweet)
 savebutton.pack()
 
+photo = PhotoImage(file = "jeb.pgm")
+Jeb_pic = Label(root, image = photo)
+Jeb_pic.image = photo
+Jeb_pic.pack()
+
 root.mainloop()
+
+
+
+
+
+
